@@ -44,22 +44,17 @@
                         <span class="font-serif text-2xl font-bold text-primary dark:text-gold tracking-tight">Orchard Bakery</span>
                     </a>
                 </div>
-                <div class="hidden lg:flex items-center space-x-6">
-                    <div class="group relative">
-                        <button class="font-medium hover:text-primary transition-colors">Home <i class="fas fa-chevron-down text-xs"></i></button>
-                        <div class="absolute hidden group-hover:block w-48 bg-white dark:bg-zinc-800 shadow-lg rounded-lg py-2 mt-0">
-                            <a href="index.html" class="block px-4 py-2 hover:bg-cream dark:hover:bg-zinc-700">Home 1</a>
-                            <a href="home2.html" class="block px-4 py-2 hover:bg-cream dark:hover:bg-zinc-700">Home 2</a>
-                        </div>
-                    </div>
+                <div class="hidden xl:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link font-medium hover:text-primary transition-colors">Home 1</a>
+                    <a href="home2.html" class="nav-link font-medium hover:text-primary transition-colors">Home 2</a>
                     <a href="about.html" class="nav-link active font-medium hover:text-primary transition-colors">About</a>
-                    <a href="menu.html" class="nav-link font-medium hover:text-primary transition-colors">Bakery Menu</a>
-                    <a href="events.html" class="nav-link font-medium hover:text-primary transition-colors">Orchard Events</a>
-                    <a href="tours.html" class="nav-link font-medium hover:text-primary transition-colors">Farm Tours</a>
+                    <a href="menu.html" class="nav-link font-medium hover:text-primary transition-colors">Bake</a>
+                    <a href="events.html" class="nav-link font-medium hover:text-primary transition-colors">Events</a>
+                    <a href="tours.html" class="nav-link font-medium hover:text-primary transition-colors">Tours</a>
                     <a href="blog.html" class="nav-link font-medium hover:text-primary transition-colors">Blog</a>
                     <a href="contact.html" class="nav-link font-medium hover:text-primary transition-colors">Contact</a>
                 </div>
-                <div class="hidden lg:flex items-center space-x-4">
+                <div class="hidden xl:flex items-center space-x-4">
                     <a href="login.html" class="px-6 py-2 bg-primary text-white rounded-full font-bold hover:bg-soft-brown transition-all shadow-md transform hover:-translate-y-0.5 flex items-center justify-center min-w-[100px]">Login</a>
                     <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-zinc-700 transition-colors">
                         <i class="fas fa-moon"></i>
@@ -67,38 +62,31 @@
                     <button id="rtl-toggle" class="px-6 py-2 border border-charcoal dark:border-zinc-500 rounded-full font-bold hover:bg-charcoal hover:text-white transition-all flex items-center justify-center min-w-[100px]">RTL</button>
                 </div>
                 <!-- Mobile Menu Button -->
-                <div class="lg:hidden flex items-center">
+                <div class="xl:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-charcoal dark:text-zinc-100 focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-zinc-800 shadow-xl absolute w-full transition-all">
+        <div id="mobile-menu" class="hidden xl:hidden bg-white dark:bg-zinc-800 shadow-xl absolute w-full transition-all">
             <div class="px-4 pt-6 pb-6 space-y-2">
-                <div class="flex items-center space-x-3 px-3 mb-6">
-                    <img src="assets/images/logo.svg" alt="Orchard Bakery" class="h-10 w-auto">
-                    <span class="font-serif text-xl font-bold text-primary dark:text-gold">Orchard Bakery</span>
-                </div>
                 <a href="index.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Home 1</a>
                 <a href="home2.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Home 2</a>
                 <a href="about.html" class="block px-3 py-2 rounded-md bg-cream dark:bg-zinc-700 font-bold text-primary dark:text-gold">About</a>
-                <a href="menu.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Bakery Menu</a>
-                <a href="events.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Orchard Events</a>
-                <a href="tours.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Farm Tours</a>
+                <a href="menu.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Bake</a>
+                <a href="events.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Events</a>
+                <a href="tours.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Tours</a>
                 <a href="blog.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Blog</a>
                 <a href="contact.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Contact</a>
-                <div class="flex flex-col space-y-2 mt-4 pt-4 border-t border-gray-200 dark:border-zinc-700">
-                    <div class="flex items-center justify-between px-3 py-2 mb-2 bg-gray-50 dark:bg-zinc-900/50 rounded-xl">
-                        <span class="text-xs font-bold uppercase tracking-widest opacity-60">Preferences</span>
-                        <div class="flex items-center space-x-2">
-                            <button id="theme-toggle-mobile" class="p-2 w-10 h-10 rounded-full bg-white dark:bg-zinc-800 shadow-sm flex items-center justify-center transition-all">
-                                <i class="fas fa-moon"></i>
-                            </button>
-                            <button id="rtl-toggle-mobile" class="px-3 h-10 text-xs font-bold border border-charcoal dark:border-zinc-500 rounded-full bg-white dark:bg-zinc-800 shadow-sm transition-all">RTL</button>
-                        </div>
-                    </div>
-                    <a href="login.html" class="w-full text-center px-6 py-3 bg-primary text-white rounded-full font-bold shadow-md">Login</a>
+                <div class="flex items-center space-x-4 mt-6 pt-6 border-t border-gray-200 dark:border-zinc-700 px-3">
+                    <button id="theme-toggle-mobile" class="p-2 w-10 h-10 rounded-full bg-white dark:bg-zinc-800 shadow-sm flex items-center justify-center transition-all border border-gray-100 dark:border-zinc-700">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="rtl-toggle-mobile" class="px-5 h-10 text-xs font-bold border border-charcoal dark:border-zinc-500 rounded-full bg-white dark:bg-zinc-800 shadow-sm transition-all">RTL</button>
+                </div>
+                <div class="px-3 pt-4">
+                    <a href="login.html" class="block w-full text-center px-6 py-3 bg-primary text-white rounded-full font-bold shadow-md">Login</a>
                 </div>
             </div>
         </div>
@@ -120,8 +108,8 @@
         <div class="max-w-7xl mx-auto">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
             <div class="lg:w-2/5 reveal group overflow-hidden rounded-[3rem]">
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1200" alt="Our Heritage Orchard" class="w-full h-auto rounded-[3rem] shadow-2xl relative z-10 group-hover:scale-110 transition-transform duration-700">
+                <div class="relative h-full">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1200" alt="Our Heritage Orchard" class="w-full h-auto lg:h-[550px] object-cover rounded-[3rem] shadow-2xl relative z-10 group-hover:scale-110 transition-transform duration-700">
                     <div class="absolute -top-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
                 </div>
             </div>
@@ -227,8 +215,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="reveal group overflow-hidden rounded-[3rem]">
-                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1200" alt="Farm Values" class="rounded-[3rem] shadow-2xl group-hover:scale-110 transition-transform duration-700">
+                <div class="reveal group overflow-hidden rounded-[3rem] h-[400px] lg:h-[700px]">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1200" alt="Farm Values" class="w-full h-full object-cover rounded-[3rem] shadow-2xl group-hover:scale-110 transition-transform duration-700">
                 </div>
             </div>
         </div>
@@ -254,9 +242,9 @@
                     <h4 class="text-xl font-bold mb-6 font-serif">Quick Links</h4>
                     <ul class="space-y-4 text-gray-600 dark:text-gray-400">
                         <li><a href="about.html" class="hover:text-primary dark:hover:text-gold transition-colors">Our Story</a></li>
-                        <li><a href="menu.html" class="hover:text-primary dark:hover:text-gold transition-colors">Bakery Menu</a></li>
-                        <li><a href="events.html" class="hover:text-primary dark:hover:text-gold transition-colors">Events & Festivals</a></li>
-                        <li><a href="tours.html" class="hover:text-primary dark:hover:text-gold transition-colors">Farm Tours</a></li>
+                        <li><a href="menu.html" class="hover:text-primary dark:hover:text-gold transition-colors">Bake</a></li>
+                        <li><a href="events.html" class="hover:text-primary dark:hover:text-gold transition-colors">Events</a></li>
+                        <li><a href="tours.html" class="hover:text-primary dark:hover:text-gold transition-colors">Tours</a></li>
                     </ul>
                 </div>
                 <div>

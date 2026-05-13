@@ -35,23 +35,23 @@
 <body class="bg-cream text-charcoal dark:bg-zinc-900 dark:text-zinc-100 transition-colors duration-300 min-h-screen flex flex-col">
 
 
-    <!-- UTILITY TOGGLES (Floating) -->
-    <div class="fixed top-6 right-6 z-50 flex items-center space-x-3">
-        <button id="theme-toggle" class="w-12 h-12 rounded-2xl bg-white/40 dark:bg-zinc-800/40 backdrop-blur-xl border border-white/30 shadow-xl flex items-center justify-center hover:scale-110 transition-all text-charcoal dark:text-gold">
-            <i class="fas fa-moon"></i>
-        </button>
-        <button id="rtl-toggle" class="h-12 px-5 rounded-2xl bg-white/40 dark:bg-zinc-800/40 backdrop-blur-xl border border-white/30 shadow-xl font-bold text-xs hover:scale-110 transition-all text-charcoal dark:text-gold">RTL</button>
-    </div>
-
     <!-- MAIN CONTENT -->
-    <main class="flex-grow flex items-center justify-center pt-32 pb-20 px-4 relative overflow-hidden">
+    <main class="flex-grow flex items-center justify-center pt-24 pb-20 px-4 relative overflow-hidden">
         <!-- Decorative Background elements -->
         <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
             <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&q=80&w=1200" alt="Signup Backdrop" class="w-full h-full object-cover">
         </div>
-        <div class="max-w-md w-full reveal">
+        <div class="max-w-md w-full relative z-10">
+            <!-- UTILITY TOGGLES (Above Card on Mobile/Tab, Top Corner on Desktop) -->
+            <div class="flex justify-end items-center space-x-3 mb-8 px-2 lg:fixed lg:top-10 lg:right-10 lg:z-50 lg:mb-0 lg:px-0">
+                 <button id="theme-toggle" class="w-12 h-12 rounded-2xl bg-white/40 dark:bg-zinc-800/40 backdrop-blur-xl border border-white/30 shadow-xl flex items-center justify-center hover:scale-110 hover:shadow-2xl active:scale-95 transition-all text-charcoal dark:text-gold group">
+                    <i class="fas fa-moon group-hover:rotate-12 transition-transform"></i>
+                </button>
+                <button id="rtl-toggle" class="h-12 px-6 rounded-2xl bg-white/40 dark:bg-zinc-800/40 backdrop-blur-xl border border-white/30 shadow-xl font-bold text-xs hover:scale-110 hover:shadow-2xl active:scale-95 transition-all text-charcoal dark:text-gold uppercase tracking-widest">RTL</button>
+            </div>
+
             <!-- Signup Card -->
-            <div class="glass p-10 rounded-[3rem] shadow-2xl border border-white/30 backdrop-blur-xl bg-white/40 dark:bg-zinc-800/40">
+            <div class="glass p-10 rounded-[3rem] shadow-2xl border border-white/30 backdrop-blur-xl bg-white/40 dark:bg-zinc-800/40 reveal">
                 <div class="text-center mb-10">
                     <a href="index.html" class="inline-flex items-center space-x-3 mb-8 group">
                         <img src="assets/images/logo.svg" alt="Orchard Bakery" class="h-12 w-auto group-hover:scale-110 transition-transform duration-300">
@@ -61,15 +61,13 @@
                 </div>
 
                 <form class="space-y-4">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase tracking-widest opacity-60">First Name</label>
-                            <input type="text" placeholder="John" class="w-full px-4 py-3 bg-white/50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-xl focus:outline-none focus:border-primary transition-all">
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase tracking-widest opacity-60">Last Name</label>
-                            <input type="text" placeholder="Doe" class="w-full px-4 py-3 bg-white/50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-xl focus:outline-none focus:border-primary transition-all">
-                        </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest opacity-60">First Name</label>
+                        <input type="text" placeholder="John" class="w-full px-4 py-3 bg-white/50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-xl focus:outline-none focus:border-primary transition-all">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest opacity-60">Last Name</label>
+                        <input type="text" placeholder="Doe" class="w-full px-4 py-3 bg-white/50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-xl focus:outline-none focus:border-primary transition-all">
                     </div>
                     <div class="space-y-2">
                         <label class="text-xs font-bold uppercase tracking-widest opacity-60">Email Address</label>
@@ -77,7 +75,21 @@
                     </div>
                     <div class="space-y-2">
                         <label class="text-xs font-bold uppercase tracking-widest opacity-60">Password</label>
-                        <input type="password" placeholder="••••••••" class="w-full px-4 py-3 bg-white/50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-xl focus:outline-none focus:border-primary transition-all">
+                        <div class="relative">
+                            <input type="password" placeholder="••••••••" class="password-input w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-xl focus:outline-none focus:border-primary transition-all">
+                            <button type="button" class="password-toggle absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary transition-colors">
+                                <i class="far fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest opacity-60">Confirm Password</label>
+                        <div class="relative">
+                            <input type="password" placeholder="••••••••" class="password-input w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-xl focus:outline-none focus:border-primary transition-all">
+                            <button type="button" class="password-toggle absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary transition-colors">
+                                <i class="far fa-eye"></i>
+                            </button>
+                        </div>
                     </div>
                     
                     <div class="flex items-start space-x-2 pt-2">

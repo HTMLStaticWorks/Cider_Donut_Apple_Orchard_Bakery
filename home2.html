@@ -44,22 +44,17 @@
                         <span class="font-serif text-2xl font-bold text-primary dark:text-gold tracking-tight">Orchard Bakery</span>
                     </a>
                 </div>
-                <div class="hidden lg:flex items-center space-x-6">
-                    <div class="group relative">
-                        <button class="nav-link active font-medium text-primary hover:text-primary transition-colors">Home <i class="fas fa-chevron-down text-xs"></i></button>
-                        <div class="absolute hidden group-hover:block w-48 bg-white dark:bg-zinc-800 shadow-lg rounded-lg py-2 mt-0">
-                            <a href="index.html" class="block px-4 py-2 hover:bg-cream dark:hover:bg-zinc-700">Home 1</a>
-                            <a href="home2.html" class="block px-4 py-2 bg-cream dark:bg-zinc-700 font-bold text-primary dark:text-gold">Home 2</a>
-                        </div>
-                    </div>
+                <div class="hidden xl:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link font-medium hover:text-primary transition-colors">Home 1</a>
+                    <a href="home2.html" class="nav-link active font-medium text-primary hover:text-primary transition-colors">Home 2</a>
                     <a href="about.html" class="nav-link font-medium hover:text-primary transition-colors">About</a>
-                    <a href="menu.html" class="nav-link font-medium hover:text-primary transition-colors">Bakery Menu</a>
-                    <a href="events.html" class="nav-link font-medium hover:text-primary transition-colors">Orchard Events</a>
-                    <a href="tours.html" class="nav-link font-medium hover:text-primary transition-colors">Farm Tours</a>
+                    <a href="menu.html" class="nav-link font-medium hover:text-primary transition-colors">Bake</a>
+                    <a href="events.html" class="nav-link font-medium hover:text-primary transition-colors">Events</a>
+                    <a href="tours.html" class="nav-link font-medium hover:text-primary transition-colors">Tours</a>
                     <a href="blog.html" class="nav-link font-medium hover:text-primary transition-colors">Blog</a>
                     <a href="contact.html" class="nav-link font-medium hover:text-primary transition-colors">Contact</a>
                 </div>
-                <div class="hidden lg:flex items-center space-x-4">
+                <div class="hidden xl:flex items-center space-x-4">
                     <a href="login.html" class="px-6 py-2 bg-primary text-white rounded-full font-bold hover:bg-soft-brown transition-all shadow-md transform hover:-translate-y-0.5 flex items-center justify-center min-w-[100px]">Login</a>
                     <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-zinc-700 transition-colors">
                         <i class="fas fa-moon"></i>
@@ -67,38 +62,31 @@
                     <button id="rtl-toggle" class="px-6 py-2 border border-charcoal dark:border-zinc-500 rounded-full font-bold hover:bg-charcoal hover:text-white transition-all flex items-center justify-center min-w-[100px]">RTL</button>
                 </div>
                 <!-- Mobile Menu Button -->
-                <div class="lg:hidden flex items-center">
+                <div class="xl:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-charcoal dark:text-zinc-100 focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-zinc-800 shadow-xl absolute w-full transition-all">
+        <div id="mobile-menu" class="hidden xl:hidden bg-white dark:bg-zinc-800 shadow-xl absolute w-full transition-all">
             <div class="px-4 pt-6 pb-6 space-y-2">
-                <div class="flex items-center space-x-3 px-3 mb-6">
-                    <img src="assets/images/logo.svg" alt="Orchard Bakery" class="h-10 w-auto">
-                    <span class="font-serif text-xl font-bold text-primary dark:text-gold">Orchard Bakery</span>
-                </div>
                 <a href="index.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Home 1</a>
                 <a href="home2.html" class="block px-3 py-2 rounded-md bg-cream dark:bg-zinc-700 font-bold text-primary dark:text-gold">Home 2</a>
                 <a href="about.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">About</a>
-                <a href="menu.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Bakery Menu</a>
-                <a href="events.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Orchard Events</a>
-                <a href="tours.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Farm Tours</a>
+                <a href="menu.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Bake</a>
+                <a href="events.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Events</a>
+                <a href="tours.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Tours</a>
                 <a href="blog.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Blog</a>
                 <a href="contact.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Contact</a>
-                <div class="flex flex-col space-y-2 mt-4 pt-4 border-t border-gray-200 dark:border-zinc-700">
-                    <div class="flex items-center justify-between px-3 py-2 mb-2 bg-gray-50 dark:bg-zinc-900/50 rounded-xl">
-                        <span class="text-xs font-bold uppercase tracking-widest opacity-60">Preferences</span>
-                        <div class="flex items-center space-x-2">
-                            <button id="theme-toggle-mobile" class="p-2 w-10 h-10 rounded-full bg-white dark:bg-zinc-800 shadow-sm flex items-center justify-center transition-all">
-                                <i class="fas fa-moon"></i>
-                            </button>
-                            <button id="rtl-toggle-mobile" class="px-3 h-10 text-xs font-bold border border-charcoal dark:border-zinc-500 rounded-full bg-white dark:bg-zinc-800 shadow-sm transition-all">RTL</button>
-                        </div>
-                    </div>
-                    <a href="login.html" class="w-full text-center px-6 py-3 bg-primary text-white rounded-full font-bold shadow-md">Login</a>
+                <div class="flex items-center space-x-4 mt-6 pt-6 border-t border-gray-200 dark:border-zinc-700 px-3">
+                    <button id="theme-toggle-mobile" class="p-2 w-10 h-10 rounded-full bg-white dark:bg-zinc-800 shadow-sm flex items-center justify-center transition-all border border-gray-100 dark:border-zinc-700">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="rtl-toggle-mobile" class="px-5 h-10 text-xs font-bold border border-charcoal dark:border-zinc-500 rounded-full bg-white dark:bg-zinc-800 shadow-sm transition-all">RTL</button>
+                </div>
+                <div class="px-3 pt-4">
+                    <a href="login.html" class="block w-full text-center px-6 py-3 bg-primary text-white rounded-full font-bold shadow-md">Login</a>
                 </div>
             </div>
         </div>
@@ -142,34 +130,40 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <!-- Month 1 -->
-                <div class="bg-beige dark:bg-zinc-900 p-8 rounded-[2rem] border border-primary/10 reveal">
+                <div class="bg-beige dark:bg-zinc-900 p-8 rounded-[2rem] border border-primary/10 reveal flex flex-col h-full">
                     <div class="text-primary font-bold text-xl mb-4">August</div>
                     <h3 class="text-2xl font-bold mb-2">Honeycrisp Peak</h3>
                     <p class="text-gray-500 mb-6 text-sm">Sweet, crunchy, and perfect for snacking. Limited availability.</p>
-                    <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
-                        <div class="h-full bg-primary w-[80%]"></div>
+                    <div class="mt-auto">
+                        <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-primary w-[80%]"></div>
+                        </div>
+                        <div class="mt-2 text-xs font-bold opacity-60">80% Ripened</div>
                     </div>
-                    <div class="mt-2 text-xs font-bold opacity-60">80% Ripened</div>
                 </div>
                 <!-- Month 2 -->
-                <div class="bg-beige dark:bg-zinc-900 p-8 rounded-[2rem] border border-primary/10 reveal" style="transition-delay: 100ms;">
+                <div class="bg-beige dark:bg-zinc-900 p-8 rounded-[2rem] border border-primary/10 reveal flex flex-col h-full" style="transition-delay: 100ms;">
                     <div class="text-secondary font-bold text-xl mb-4">September</div>
                     <h3 class="text-2xl font-bold mb-2">Gala & Fuji</h3>
                     <p class="text-gray-500 mb-6 text-sm">The best of the bunch for pies and sauces. Family picking starts.</p>
-                    <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
-                        <div class="h-full bg-secondary w-[40%]"></div>
+                    <div class="mt-auto">
+                        <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-secondary w-[40%]"></div>
+                        </div>
+                        <div class="mt-2 text-xs font-bold opacity-60">40% Ripened</div>
                     </div>
-                    <div class="mt-2 text-xs font-bold opacity-60">40% Ripened</div>
                 </div>
                 <!-- Month 3 -->
-                <div class="bg-beige dark:bg-zinc-900 p-8 rounded-[2rem] border border-primary/10 reveal" style="transition-delay: 200ms;">
+                <div class="bg-beige dark:bg-zinc-900 p-8 rounded-[2rem] border border-primary/10 reveal flex flex-col h-full" style="transition-delay: 200ms;">
                     <div class="text-accent font-bold text-xl mb-4">October</div>
                     <h3 class="text-2xl font-bold mb-2">Granny Smith</h3>
                     <p class="text-gray-500 mb-6 text-sm">Tart and tangy, perfect for baking. Harvest festival month.</p>
-                    <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
-                        <div class="h-full bg-accent w-[10%]"></div>
+                    <div class="mt-auto">
+                        <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-accent w-[10%]"></div>
+                        </div>
+                        <div class="mt-2 text-xs font-bold opacity-60">Early Stage</div>
                     </div>
-                    <div class="mt-2 text-xs font-bold opacity-60">Early Stage</div>
                 </div>
                 <!-- Month 4 -->
                 <div class="bg-charcoal text-white p-8 rounded-[2rem] flex flex-col justify-center items-center text-center reveal" style="transition-delay: 300ms;">
@@ -186,8 +180,8 @@
     <section class="py-24 px-4">
         <div class="max-w-7xl mx-auto">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 lg:gap-24 items-center mb-20">
-            <div class="md:w-2/5 reveal group overflow-hidden rounded-3xl">
-                <img src="bakery_display_1778595177995.png" alt="Market Products" class="w-full h-auto rounded-3xl shadow-2xl group-hover:scale-110 transition-transform duration-700">
+            <div class="md:w-2/5 reveal group overflow-hidden rounded-3xl h-[400px] md:h-[500px] lg:h-[600px]">
+                <img src="bakery_display_1778595177995.png" alt="Market Products" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
             </div>
             <div class="md:w-3/5 reveal">
                     <h2 class="text-4xl md:text-5xl font-bold mb-8 font-serif">The Farm Market</h2>
@@ -264,8 +258,8 @@
             </div>
             <div class="lg:w-2/5 reveal order-1 lg:order-2">
                 <div class="grid grid-cols-2 gap-4">
-                    <img src="https://images.unsplash.com/photo-1590682680695-43b964a3ae17?auto=format&fit=crop&q=80&w=600" alt="Farm Story 1" class="rounded-2xl shadow-lg mt-12 hover:scale-105 transition-transform w-full h-auto">
-                    <img src="https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?auto=format&fit=crop&q=80&w=600" alt="Farm Story 2" class="rounded-2xl shadow-lg hover:scale-105 transition-transform w-full h-auto">
+                    <img src="https://images.unsplash.com/photo-1590682680695-43b964a3ae17?auto=format&fit=crop&q=80&w=600" alt="Farm Story 1" class="rounded-2xl shadow-lg hover:scale-105 transition-transform w-full h-[300px] md:h-[400px] object-cover">
+                    <img src="https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?auto=format&fit=crop&q=80&w=600" alt="Farm Story 2" class="rounded-2xl shadow-lg hover:scale-105 transition-transform w-full h-[300px] md:h-[400px] object-cover">
                 </div>
             </div>
             </div>
@@ -327,22 +321,22 @@
                         <div class="glass p-8 rounded-3xl shadow-lg">
                             <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                             <p class="italic text-gray-700 dark:text-gray-300 mb-6 text-sm">"The best cider donuts we've ever had! The farm tours were so educational for the kids."</p>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 bg-primary rounded-full"></div>
+                            <div class="flex items-center space-x-4">
+                                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=100" alt="Miller Family" class="w-12 h-12 rounded-full object-cover border-2 border-primary/20 shadow-sm">
                                 <div>
-                                    <h5 class="font-bold text-xs uppercase">The Miller Family</h5>
-                                    <p class="text-[10px] opacity-60">Annual Visitors</p>
+                                    <h5 class="font-bold text-sm font-serif">The Miller Family</h5>
+                                    <p class="text-xs opacity-60">Annual Visitors</p>
                                 </div>
                             </div>
                         </div>
                         <div class="glass p-8 rounded-3xl shadow-lg mt-8 md:mt-0">
                             <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                             <p class="italic text-gray-700 dark:text-gray-300 mb-6 text-sm">"Pure magic. The golden hour in the orchard is something everyone should experience once."</p>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 bg-secondary rounded-full"></div>
+                            <div class="flex items-center space-x-4">
+                                <img src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?auto=format&fit=crop&q=80&w=100" alt="James & Sarah" class="w-12 h-12 rounded-full object-cover border-2 border-secondary/20 shadow-sm">
                                 <div>
-                                    <h5 class="font-bold text-xs uppercase">James & Sarah</h5>
-                                    <p class="text-[10px] opacity-60">Local Neighbors</p>
+                                    <h5 class="font-bold text-sm font-serif">James & Sarah</h5>
+                                    <p class="text-xs opacity-60">Local Neighbors</p>
                                 </div>
                             </div>
                         </div>
@@ -384,9 +378,9 @@
                     <h4 class="text-xl font-bold mb-6 font-serif">Quick Links</h4>
                     <ul class="space-y-4 text-gray-600 dark:text-gray-400">
                         <li><a href="about.html" class="hover:text-primary dark:hover:text-gold transition-colors">Our Story</a></li>
-                        <li><a href="menu.html" class="hover:text-primary dark:hover:text-gold transition-colors">Bakery Menu</a></li>
-                        <li><a href="events.html" class="hover:text-primary dark:hover:text-gold transition-colors">Events & Festivals</a></li>
-                        <li><a href="tours.html" class="hover:text-primary dark:hover:text-gold transition-colors">Farm Tours</a></li>
+                        <li><a href="menu.html" class="hover:text-primary dark:hover:text-gold transition-colors">Bake</a></li>
+                        <li><a href="events.html" class="hover:text-primary dark:hover:text-gold transition-colors">Events</a></li>
+                        <li><a href="tours.html" class="hover:text-primary dark:hover:text-gold transition-colors">Tours</a></li>
                     </ul>
                 </div>
                 <div>

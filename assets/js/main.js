@@ -29,23 +29,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // RTL Toggle Logic
     const rtlToggles = document.querySelectorAll('#rtl-toggle, #rtl-toggle-mobile');
-    if (rtlToggles.length > 0) {
-        // Check for saved RTL preference
-        if (localStorage.getItem('direction') === 'rtl') {
-            html.setAttribute('dir', 'rtl');
-            rtlToggles.forEach(btn => btn.textContent = 'LTR');
-        }
-
-        rtlToggles.forEach(toggle => {
-            toggle.addEventListener('click', () => {
-                const currentDir = html.getAttribute('dir');
-                const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
-                html.setAttribute('dir', newDir);
-                localStorage.setItem('direction', newDir);
-                rtlToggles.forEach(btn => btn.textContent = newDir === 'rtl' ? 'LTR' : 'RTL');
-            });
+    
+    function updateRTL(isRTL) {
+        const direction = isRTL ? 'rtl' : 'ltr';
+        html.setAttribute('dir', direction);
+        localStorage.setItem('direction', direction);
+        rtlToggles.forEach(btn => {
+            btn.textContent = isRTL ? 'LTR' : 'RTL';
         });
     }
+
+    // Initialize RTL state
+    if (localStorage.getItem('direction') === 'rtl') {
+        updateRTL(true);
+    }
+
+    rtlToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const isRTL = html.getAttribute('dir') !== 'rtl';
+            updateRTL(isRTL);
+        });
+    });
 
     // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -90,4 +94,24 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Password Toggle Logic
+    const passwordToggles = document.querySelectorAll('.password-toggle');
+    passwordToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const container = toggle.closest('.relative');
+            const input = container.querySelector('.password-input');
+            const icon = toggle.querySelector('i');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+    });
 });

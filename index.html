@@ -53,24 +53,19 @@
                 </div>
 
                 <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center space-x-6">
-                    <div class="group relative">
-                        <button class="nav-link active font-medium text-primary hover:text-primary transition-colors">Home <i class="fas fa-chevron-down text-xs"></i></button>
-                        <div class="absolute hidden group-hover:block w-48 bg-white dark:bg-zinc-800 shadow-lg rounded-lg py-2 mt-0">
-                            <a href="index.html" class="block px-4 py-2 bg-cream dark:bg-zinc-700 font-bold text-primary dark:text-gold">Home 1</a>
-                            <a href="home2.html" class="block px-4 py-2 hover:bg-cream dark:hover:bg-zinc-700">Home 2</a>
-                        </div>
-                    </div>
+                <div class="hidden xl:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link active font-medium text-primary hover:text-primary transition-colors">Home 1</a>
+                    <a href="home2.html" class="nav-link font-medium hover:text-primary transition-colors">Home 2</a>
                     <a href="about.html" class="nav-link font-medium hover:text-primary transition-colors">About</a>
-                    <a href="menu.html" class="nav-link font-medium hover:text-primary transition-colors">Bakery Menu</a>
-                    <a href="events.html" class="nav-link font-medium hover:text-primary transition-colors">Orchard Events</a>
-                    <a href="tours.html" class="nav-link font-medium hover:text-primary transition-colors">Farm Tours</a>
+                    <a href="menu.html" class="nav-link font-medium hover:text-primary transition-colors">Bake</a>
+                    <a href="events.html" class="nav-link font-medium hover:text-primary transition-colors">Events</a>
+                    <a href="tours.html" class="nav-link font-medium hover:text-primary transition-colors">Tours</a>
                     <a href="blog.html" class="nav-link font-medium hover:text-primary transition-colors">Blog</a>
                     <a href="contact.html" class="nav-link font-medium hover:text-primary transition-colors">Contact</a>
                 </div>
 
                 <!-- Icons & Toggles -->
-                <div class="hidden lg:flex items-center space-x-4">
+                <div class="hidden xl:flex items-center space-x-4">
                     <a href="login.html" class="px-6 py-2 bg-primary text-white rounded-full font-bold hover:bg-soft-brown transition-all shadow-md transform hover:-translate-y-0.5 flex items-center justify-center min-w-[100px]">Login</a>
                     
                     <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-zinc-700 transition-colors">
@@ -80,7 +75,7 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <div class="lg:hidden flex items-center">
+                <div class="xl:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-charcoal dark:text-zinc-100 focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
@@ -89,31 +84,24 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-zinc-800 shadow-xl absolute w-full transition-all">
+        <div id="mobile-menu" class="hidden xl:hidden bg-white dark:bg-zinc-800 shadow-xl absolute w-full transition-all">
             <div class="px-4 pt-6 pb-6 space-y-2">
-                <div class="flex items-center space-x-3 px-3 mb-6">
-                    <img src="assets/images/logo.svg" alt="Orchard Bakery" class="h-10 w-auto">
-                    <span class="font-serif text-xl font-bold text-primary dark:text-gold">Orchard Bakery</span>
-                </div>
                 <a href="index.html" class="block px-3 py-2 rounded-md bg-cream dark:bg-zinc-700 font-bold text-primary dark:text-gold">Home 1</a>
                 <a href="home2.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Home 2</a>
                 <a href="about.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">About</a>
-                <a href="menu.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Bakery Menu</a>
-                <a href="events.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Orchard Events</a>
-                <a href="tours.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Farm Tours</a>
+                <a href="menu.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Bake</a>
+                <a href="events.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Events</a>
+                <a href="tours.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Tours</a>
                 <a href="blog.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Blog</a>
                 <a href="contact.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Contact</a>
-                <div class="flex flex-col space-y-2 mt-4 pt-4 border-t border-gray-200 dark:border-zinc-700">
-                    <div class="flex items-center justify-between px-3 py-2 mb-2 bg-gray-50 dark:bg-zinc-900/50 rounded-xl">
-                        <span class="text-xs font-bold uppercase tracking-widest opacity-60">Preferences</span>
-                        <div class="flex items-center space-x-2">
-                            <button id="theme-toggle-mobile" class="p-2 w-10 h-10 rounded-full bg-white dark:bg-zinc-800 shadow-sm flex items-center justify-center transition-all">
-                                <i class="fas fa-moon"></i>
-                            </button>
-                            <button id="rtl-toggle-mobile" class="px-3 h-10 text-xs font-bold border border-charcoal dark:border-zinc-500 rounded-full bg-white dark:bg-zinc-800 shadow-sm transition-all">RTL</button>
-                        </div>
-                    </div>
-                    <a href="login.html" class="w-full text-center px-6 py-3 bg-primary text-white rounded-full font-bold shadow-md">Login</a>
+                <div class="flex items-center space-x-4 mt-6 pt-6 border-t border-gray-200 dark:border-zinc-700 px-3">
+                    <button id="theme-toggle-mobile" class="p-2 w-10 h-10 rounded-full bg-white dark:bg-zinc-800 shadow-sm flex items-center justify-center transition-all border border-gray-100 dark:border-zinc-700">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="rtl-toggle-mobile" class="px-5 h-10 text-xs font-bold border border-charcoal dark:border-zinc-500 rounded-full bg-white dark:bg-zinc-800 shadow-sm transition-all">RTL</button>
+                </div>
+                <div class="px-3 pt-4">
+                    <a href="login.html" class="block w-full text-center px-6 py-3 bg-primary text-white rounded-full font-bold shadow-md">Login</a>
                 </div>
             </div>
         </div>
@@ -176,10 +164,10 @@
                     <div class="h-64 overflow-hidden">
                         <img src="flavor_cinnamon_sugar_1778596254257.png" alt="Cinnamon Sugar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-2xl font-bold font-serif">Classic Cinnamon</h3>
-                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-bold">$12 / Dozen</span>
+                    <div class="p-6 xl:p-8">
+                        <div class="flex justify-between items-center gap-2 mb-4">
+                            <h3 class="text-xl lg:text-lg xl:text-2xl font-bold font-serif truncate" title="Classic Cinnamon">Classic Cinnamon</h3>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] xl:text-xs font-bold whitespace-nowrap">$12 / Dozen</span>
                         </div>
                         <p class="text-gray-600 dark:text-gray-400 mb-6">Warm cider donut rolled in fresh cinnamon and organic cane sugar.</p>
                         <button class="w-full py-3 border-2 border-primary text-primary font-bold rounded-xl group-hover:bg-primary group-hover:text-white transition-all">Add to Cart</button>
@@ -191,10 +179,10 @@
                     <div class="h-64 overflow-hidden">
                         <img src="flavor_maple_glaze_1778596270548.png" alt="Maple Glaze" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-2xl font-bold font-serif">Maple Glaze</h3>
-                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-bold">$14 / Dozen</span>
+                    <div class="p-6 xl:p-8">
+                        <div class="flex justify-between items-center gap-2 mb-4">
+                            <h3 class="text-xl lg:text-lg xl:text-2xl font-bold font-serif truncate" title="Maple Glaze">Maple Glaze</h3>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] xl:text-xs font-bold whitespace-nowrap">$14 / Dozen</span>
                         </div>
                         <p class="text-gray-600 dark:text-gray-400 mb-6">Infused with real Vermont maple syrup and topped with toasted pecans.</p>
                         <button class="w-full py-3 border-2 border-primary text-primary font-bold rounded-xl group-hover:bg-primary group-hover:text-white transition-all">Add to Cart</button>
@@ -206,10 +194,10 @@
                     <div class="h-64 overflow-hidden">
                         <img src="flavor_apple_crumble_1778596288571.png" alt="Apple Crumble" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-2xl font-bold font-serif">Apple Crumble</h3>
-                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-bold">$15 / Dozen</span>
+                    <div class="p-6 xl:p-8">
+                        <div class="flex justify-between items-center gap-2 mb-4">
+                            <h3 class="text-xl lg:text-lg xl:text-2xl font-bold font-serif truncate" title="Apple Crumble">Apple Crumble</h3>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] xl:text-xs font-bold whitespace-nowrap">$15 / Dozen</span>
                         </div>
                         <p class="text-gray-600 dark:text-gray-400 mb-6">Stuffed with orchard-fresh apple filling and topped with buttery streusel.</p>
                         <button class="w-full py-3 border-2 border-primary text-primary font-bold rounded-xl group-hover:bg-primary group-hover:text-white transition-all">Add to Cart</button>
@@ -221,10 +209,10 @@
                     <div class="h-64 overflow-hidden">
                         <img src="flavor_pumpkin_spice_1778596305049.png" alt="Pumpkin Spice" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-2xl font-bold font-serif">Pumpkin Spice</h3>
-                            <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-bold">Seasonal</span>
+                    <div class="p-6 xl:p-8">
+                        <div class="flex justify-between items-center gap-2 mb-4">
+                            <h3 class="text-xl lg:text-lg xl:text-2xl font-bold font-serif truncate" title="Pumpkin Spice">Pumpkin Spice</h3>
+                            <span class="bg-secondary text-white px-3 py-1 rounded-full text-[10px] xl:text-xs font-bold whitespace-nowrap">Seasonal</span>
                         </div>
                         <p class="text-gray-600 dark:text-gray-400 mb-6">Our limited edition autumn blend with hints of nutmeg and cloves.</p>
                         <button class="w-full py-3 border-2 border-secondary text-secondary font-bold rounded-xl group-hover:bg-secondary group-hover:text-white transition-all">Waitlist</button>
@@ -390,7 +378,7 @@
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                     <p class="text-lg italic text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">"The donuts were still warm when they handed them to us. Best I've ever had in my life. The orchard walk was so peaceful."</p>
-                    <div class="flex flex-col items-center space-y-3">
+                    <div class="flex flex-col items-center text-center space-y-2">
                         <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" alt="Sarah J." class="w-16 h-16 rounded-full object-cover border-4 border-primary/10 shadow-md">
                         <div>
                             <h4 class="font-bold text-primary dark:text-gold">Sarah Johnson</h4>
@@ -405,7 +393,7 @@
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                     <p class="text-lg italic text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">"We come every fall for the hayrides. It's a family tradition now. The apple cider is magic in a bottle!"</p>
-                    <div class="flex flex-col items-center space-y-3">
+                    <div class="flex flex-col items-center text-center space-y-2">
                         <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=100" alt="Michael K." class="w-16 h-16 rounded-full object-cover border-4 border-secondary/10 shadow-md">
                         <div>
                             <h4 class="font-bold text-secondary dark:text-orange-400">Michael Kraft</h4>
@@ -420,7 +408,7 @@
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                     <p class="text-lg italic text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">"Beautiful venue! We hosted my daughter's birthday here and the staff were incredibly helpful. Highly recommend."</p>
-                    <div class="flex flex-col items-center space-y-3">
+                    <div class="flex flex-col items-center text-center space-y-2">
                         <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=100" alt="Emma P." class="w-16 h-16 rounded-full object-cover border-4 border-accent/10 shadow-md">
                         <div>
                             <h4 class="font-bold text-accent dark:text-red-400">Emma Parker</h4>
@@ -455,9 +443,9 @@
                     <h4 class="text-xl font-bold mb-6 font-serif">Quick Links</h4>
                     <ul class="space-y-4 text-gray-600 dark:text-gray-400">
                         <li><a href="about.html" class="hover:text-primary dark:hover:text-gold transition-colors">Our Story</a></li>
-                        <li><a href="menu.html" class="hover:text-primary dark:hover:text-gold transition-colors">Bakery Menu</a></li>
-                        <li><a href="events.html" class="hover:text-primary dark:hover:text-gold transition-colors">Events & Festivals</a></li>
-                        <li><a href="tours.html" class="hover:text-primary dark:hover:text-gold transition-colors">Farm Tours</a></li>
+                        <li><a href="menu.html" class="hover:text-primary dark:hover:text-gold transition-colors">Bake</a></li>
+                        <li><a href="events.html" class="hover:text-primary dark:hover:text-gold transition-colors">Events</a></li>
+                        <li><a href="tours.html" class="hover:text-primary dark:hover:text-gold transition-colors">Tours</a></li>
                         <li><a href="blog.html" class="hover:text-primary dark:hover:text-gold transition-colors">Harvest Blog</a></li>
                     </ul>
                 </div>
