@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orchard Events | Cider Donut & Apple Orchard Bakery</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#D35400',
+                        accent: '#A52A2A',
+                        cream: '#FDF5E6',
+                        beige: '#F5F5DC',
+                        charcoal: '#333333',
+                        gold: '#D4AF37',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+</head>
+<body class="bg-cream text-charcoal dark:bg-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+
+    <!-- NAVBAR (Consistent) -->
+    <nav class="fixed w-full z-50 glass shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3 group">
+                        <img src="assets/images/logo.svg" alt="Orchard Bakery" class="h-12 w-auto group-hover:scale-110 transition-transform duration-300">
+                        <span class="font-serif text-2xl font-bold text-primary dark:text-gold tracking-tight">Orchard Bakery</span>
+                    </a>
+                </div>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <div class="group relative">
+                        <button class="font-medium hover:text-primary transition-colors">Home <i class="fas fa-chevron-down text-xs"></i></button>
+                        <div class="absolute hidden group-hover:block w-48 bg-white dark:bg-zinc-800 shadow-lg rounded-lg py-2 mt-0">
+                            <a href="index.html" class="block px-4 py-2 hover:bg-cream dark:hover:bg-zinc-700">Home 1</a>
+                            <a href="home2.html" class="block px-4 py-2 hover:bg-cream dark:hover:bg-zinc-700">Home 2</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-link font-medium hover:text-primary transition-colors">About</a>
+                    <a href="menu.html" class="nav-link font-medium hover:text-primary transition-colors">Bakery Menu</a>
+                    <a href="events.html" class="nav-link active font-medium text-primary hover:text-primary transition-colors">Orchard Events</a>
+                    <a href="tours.html" class="nav-link font-medium hover:text-primary transition-colors">Farm Tours</a>
+                    <a href="blog.html" class="nav-link font-medium hover:text-primary transition-colors">Blog</a>
+                    <a href="contact.html" class="nav-link font-medium hover:text-primary transition-colors">Contact</a>
+                </div>
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="login.html" class="px-6 py-2 bg-primary text-white rounded-full font-bold hover:bg-soft-brown transition-all shadow-md transform hover:-translate-y-0.5 flex items-center justify-center min-w-[100px]">Login</a>
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-zinc-700 transition-colors">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="rtl-toggle" class="px-6 py-2 border border-charcoal dark:border-zinc-500 rounded-full font-bold hover:bg-charcoal hover:text-white transition-all flex items-center justify-center min-w-[100px]">RTL</button>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-charcoal dark:text-zinc-100 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-zinc-800 shadow-xl absolute w-full transition-all">
+            <div class="px-4 pt-6 pb-6 space-y-2">
+                <div class="flex items-center space-x-3 px-3 mb-6">
+                    <img src="assets/images/logo.svg" alt="Orchard Bakery" class="h-10 w-auto">
+                    <span class="font-serif text-xl font-bold text-primary dark:text-gold">Orchard Bakery</span>
+                </div>
+                <a href="index.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Home 1</a>
+                <a href="home2.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Home 2</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">About</a>
+                <a href="menu.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Bakery Menu</a>
+                <a href="events.html" class="block px-3 py-2 rounded-md bg-cream dark:bg-zinc-700 font-bold text-primary dark:text-gold">Orchard Events</a>
+                <a href="tours.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Farm Tours</a>
+                <a href="blog.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Blog</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Contact</a>
+                <div class="flex flex-col space-y-2 mt-4 pt-4 border-t border-gray-200 dark:border-zinc-700">
+                    <div class="flex items-center justify-between px-3 py-2 mb-2 bg-gray-50 dark:bg-zinc-900/50 rounded-xl">
+                        <span class="text-xs font-bold uppercase tracking-widest opacity-60">Preferences</span>
+                        <div class="flex items-center space-x-2">
+                            <button id="theme-toggle-mobile" class="p-2 w-10 h-10 rounded-full bg-white dark:bg-zinc-800 shadow-sm flex items-center justify-center transition-all">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                            <button id="rtl-toggle-mobile" class="px-3 h-10 text-xs font-bold border border-charcoal dark:border-zinc-500 rounded-full bg-white dark:bg-zinc-800 shadow-sm transition-all">RTL</button>
+                        </div>
+                    </div>
+                    <a href="login.html" class="w-full text-center px-6 py-3 bg-primary text-white rounded-full font-bold shadow-md">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <img src="event_festival_crowd_1778596380660.png" alt="Orchard Events" class="absolute inset-0 w-full h-full object-cover transform scale-105 animate-[pulse_10s_infinite]">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 text-center px-4 reveal">
+            <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 font-serif">Seasonal Events</h1>
+            <p class="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">From harvest festivals to rustic weddings, we make every moment magical.</p>
+        </div>
+    </section>
+
+    <!-- SEASONAL FESTIVAL SHOWCASE -->
+    <section class="py-24 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold font-serif mb-6">Upcoming Festivals</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Festival 1 -->
+                <div class="group reveal">
+                    <div class="relative rounded-3xl overflow-hidden mb-8 h-80">
+                        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&q=80&w=600" alt="Birthday Parties" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-6 left-6 bg-white px-4 py-2 rounded-full font-bold text-charcoal shadow-lg">Sept 15-30</div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 font-serif">Apple Harvest Festival</h3>
+                    <p class="text-gray-500 mb-6 italic">Join us for the peak of the season with live music, apple pie contests, and cider tastings.</p>
+                    <a href="#" class="text-primary font-bold hover:underline">Event Details <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <!-- Festival 2 -->
+                <div class="group reveal" style="transition-delay: 100ms;">
+                    <div class="relative rounded-3xl overflow-hidden mb-8 h-80">
+                        <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=600" alt="Pumpkin Patch" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-6 left-6 bg-white px-4 py-2 rounded-full font-bold text-charcoal shadow-lg">Oct 1-31</div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 font-serif">Pumpkin Weekends</h3>
+                    <p class="text-gray-500 mb-6 italic">Pick your perfect pumpkin from our patch and enjoy haunted hayrides after dark.</p>
+                    <a href="#" class="text-secondary font-bold hover:underline">Event Details <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <!-- Festival 3 -->
+                <div class="group reveal sm:col-span-2 lg:col-span-1 sm:max-w-md sm:mx-auto lg:max-w-none lg:mx-0" style="transition-delay: 200ms;">
+                    <div class="relative rounded-3xl overflow-hidden mb-8 h-80">
+                        <img src="assets/images/live_music.png" alt="Live Music" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-6 left-6 bg-white px-4 py-2 rounded-full font-bold text-charcoal shadow-lg">Every Saturday</div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 font-serif">Live Music Nights</h3>
+                    <p class="text-gray-500 mb-6 italic">Local folk and country bands perform under the stars at our orchard amphitheater.</p>
+                    <a href="#" class="text-accent font-bold hover:underline">Event Details <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BARN EVENT RENTAL -->
+    <section class="py-24 px-4 bg-beige dark:bg-zinc-950">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+            <div class="lg:w-2/5 reveal group overflow-hidden rounded-[3rem] shadow-xl">
+                <img src="event_wedding_setup_1778596398032.png" alt="Wedding Barn" class="w-full h-auto rounded-[3rem] group-hover:scale-110 transition-transform duration-700">
+            </div>
+            <div class="lg:w-3/5 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 font-serif leading-tight">Host Your Event</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed max-w-2xl">Our historic 19th-century barn has been restored to provide a premium event space. With seating for up to 200 guests, it's the ideal location for weddings, birthdays, and corporate retreats.</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
+                    <div class="flex items-start space-x-4">
+                        <i class="fas fa-glass-cheers text-primary text-2xl mt-1"></i>
+                        <div>
+                            <h4 class="font-bold">Wedding Packages</h4>
+                            <p class="text-sm opacity-60">Full-service catering and decor options.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <i class="fas fa-birthday-cake text-secondary text-2xl mt-1"></i>
+                        <div>
+                            <h4 class="font-bold">Birthday Bashes</h4>
+                            <p class="text-sm opacity-60">Private farm tours and donut parties.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="contact.html" class="inline-block px-10 py-4 bg-primary text-white rounded-full font-bold shadow-lg hover:bg-soft-brown transition-all">Book Your Date</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WEEKEND ACTIVITIES -->
+    <section class="py-24 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold font-serif mb-4">Every Weekend at the Farm</h2>
+                <p class="text-gray-500">There's always something happening at Orchard Bakery.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white dark:bg-zinc-800 p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center reveal group border border-primary/5">
+                    <div class="w-20 h-20 bg-beige dark:bg-zinc-700 rounded-2xl flex items-center justify-center mx-auto mb-6 text-primary text-3xl group-hover:scale-110 group-hover:rotate-6 transition-transform">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 font-serif">Hayrides</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Hourly tours through the rows of our heritage orchard.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white dark:bg-zinc-800 p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center reveal group border border-primary/5" style="transition-delay: 100ms;">
+                    <div class="w-20 h-20 bg-beige dark:bg-zinc-700 rounded-2xl flex items-center justify-center mx-auto mb-6 text-secondary text-3xl group-hover:scale-110 group-hover:rotate-6 transition-transform">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 font-serif">Corn Maze</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Get lost in our 5-acre maze of towering corn stalks.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white dark:bg-zinc-800 p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center reveal group border border-primary/5" style="transition-delay: 200ms;">
+                    <div class="w-20 h-20 bg-beige dark:bg-zinc-700 rounded-2xl flex items-center justify-center mx-auto mb-6 text-accent text-3xl group-hover:scale-110 group-hover:rotate-6 transition-transform">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 font-serif">Bonfire Nights</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">S'mores, stories, and warm cider by the crackling fire.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white dark:bg-zinc-800 p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center reveal group border border-primary/5" style="transition-delay: 300ms;">
+                    <div class="w-20 h-20 bg-beige dark:bg-zinc-700 rounded-2xl flex items-center justify-center mx-auto mb-6 text-gold text-3xl group-hover:scale-110 group-hover:rotate-6 transition-transform">
+                        <i class="fas fa-horse"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 font-serif">Pony Rides</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Safe and gentle explorers for our youngest farm visitors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-beige text-charcoal dark:bg-charcoal dark:text-white pt-20 pb-10 px-4 border-t border-primary/10 dark:border-zinc-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="space-y-6">
+                    <a href="index.html" class="flex items-center space-x-3 group">
+                        <img src="assets/images/logo.svg" alt="Orchard Bakery" class="h-10 w-auto group-hover:rotate-12 transition-transform duration-300">
+                        <span class="font-serif text-2xl font-bold text-primary dark:text-gold tracking-tight">Orchard Bakery</span>
+                    </a>
+                    <p class="text-gray-600 dark:text-gray-400">Bringing the harvest to your table since 1952. Handcrafted with love, tradition, and the freshest apples in the valley.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary/10 dark:bg-white/10 text-primary dark:text-white rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-primary/10 dark:bg-white/10 text-primary dark:text-white rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-primary/10 dark:bg-white/10 text-primary dark:text-white rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6 font-serif">Quick Links</h4>
+                    <ul class="space-y-4 text-gray-600 dark:text-gray-400">
+                        <li><a href="about.html" class="hover:text-primary dark:hover:text-gold transition-colors">Our Story</a></li>
+                        <li><a href="menu.html" class="hover:text-primary dark:hover:text-gold transition-colors">Bakery Menu</a></li>
+                        <li><a href="events.html" class="hover:text-primary dark:hover:text-gold transition-colors">Events & Festivals</a></li>
+                        <li><a href="tours.html" class="hover:text-primary dark:hover:text-gold transition-colors">Farm Tours</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6 font-serif">Visit Us</h4>
+                    <ul class="space-y-4 text-gray-600 dark:text-gray-400">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+                            <span>123 Orchard Lane, Apple Valley, NY 10950</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-primary"></i>
+                            <span>(555) 123-4567</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6 font-serif">Stay Updated</h4>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Your Email Address" class="w-full px-4 py-3 bg-white dark:bg-white/10 border border-primary/20 dark:border-white/20 rounded-xl focus:outline-none focus:border-primary transition-all text-charcoal dark:text-white">
+                        <button class="w-full py-3 bg-primary hover:bg-soft-brown text-white font-bold rounded-xl transition-all">Subscribe Now</button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-primary/10 dark:border-zinc-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 Cider Donut & Apple Orchard Bakery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 z-50 bg-primary text-white w-12 h-12 rounded-full shadow-2xl items-center justify-center hidden hover:bg-secondary transition-all transform hover:scale-110">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

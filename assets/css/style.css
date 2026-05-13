@@ -1,0 +1,229 @@
+/* Custom Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --primary: #8B4513;
+    --secondary: #D35400;
+    --accent: #A52A2A;
+    --cream: #FDF5E6;
+    --beige: #F5F5DC;
+    --charcoal: #333333;
+    --gold: #D4AF37;
+    --soft-brown: #A0522D;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+    background: rgba(26, 26, 26, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cream);
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="rtl"] .ml-auto {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+[dir="rtl"] .mr-auto {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* Transitions & Animations */
+.transition-all-300 {
+    transition: all 0.3s ease;
+}
+
+.transition-premium {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Premium Button Hover Effects */
+.btn-primary, .bg-primary, .bg-secondary, .bg-accent, .bg-gold {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    background-size: 200% auto !important;
+}
+
+.bg-primary {
+    background-image: linear-gradient(45deg, #8B4513 0%, #A0522D 51%, #8B4513 100%) !important;
+}
+
+.bg-secondary {
+    background-image: linear-gradient(45deg, #D35400 0%, #E67E22 51%, #D35400 100%) !important;
+}
+
+.bg-accent {
+    background-image: linear-gradient(45deg, #A52A2A 0%, #C0392B 51%, #A52A2A 100%) !important;
+}
+
+.btn-primary:hover, .bg-primary:hover, .bg-secondary:hover, .bg-accent:hover, .bg-gold:hover {
+    transform: translateY(-5px) scale(1.03) !important;
+    background-position: right center !important;
+    box-shadow: 0 15px 30px rgba(139, 69, 19, 0.3) !important;
+    filter: brightness(1.1);
+}
+
+.dark .btn-primary:hover, .dark .bg-primary:hover, .dark .bg-secondary:hover, .dark .bg-accent:hover, .dark .bg-gold:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Secondary/Glass Button Hover */
+.btn-secondary, .bg-white\/20, .bg-white\/10, .border-primary {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-secondary:hover, .bg-white\/20:hover, .bg-white\/10:hover, .border-primary:hover {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    border-color: transparent !important;
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dark .btn-secondary:hover, .dark .bg-white\/20:hover, .dark .bg-white\/10:hover, .dark .border-primary:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Icon Button Hover */
+.btn-icon, a i, button i, #theme-toggle i, #rtl-toggle i, .social-icon {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: inline-block;
+}
+
+.btn-icon:hover, a:hover i, button:hover i, #theme-toggle:hover i, #rtl-toggle:hover i, .social-icon:hover {
+    transform: scale(1.2) rotate(8deg) !important;
+    color: var(--gold) !important;
+}
+
+/* Social Icon Container */
+.flex.space-x-4 a, .flex.justify-center.space-x-6 a {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.flex.space-x-4 a:hover, .flex.justify-center.space-x-6 a:hover {
+    transform: translateY(-5px) scale(1.1) !important;
+    background-color: var(--primary) !important;
+    color: white !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Form Buttons & Inputs */
+input[type="text"], input[type="email"], input[type="password"], select, textarea {
+    transition: all 0.3s ease !important;
+}
+
+input:focus, select:focus, textarea:focus {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 20px rgba(139, 69, 19, 0.1) !important;
+    border-color: var(--primary) !important;
+}
+
+/* Navbar Link Hover */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.dark .nav-link.active {
+    color: var(--gold);
+}
+
+.dark .nav-link::after {
+    background-color: var(--gold);
+}
+
+/* Card Hover */
+.glass {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.glass:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Hero Overlay */
+.hero-overlay {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+}

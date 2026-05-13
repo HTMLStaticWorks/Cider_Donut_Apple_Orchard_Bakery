@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Menu | Cider Donut & Apple Orchard Bakery</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#D35400',
+                        accent: '#A52A2A',
+                        cream: '#FDF5E6',
+                        beige: '#F5F5DC',
+                        charcoal: '#333333',
+                        gold: '#D4AF37',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+</head>
+<body class="bg-cream text-charcoal dark:bg-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+
+    <!-- NAVBAR (Consistent) -->
+    <nav class="fixed w-full z-50 glass shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3 group">
+                        <img src="assets/images/logo.svg" alt="Orchard Bakery" class="h-12 w-auto group-hover:scale-110 transition-transform duration-300">
+                        <span class="font-serif text-2xl font-bold text-primary dark:text-gold tracking-tight">Orchard Bakery</span>
+                    </a>
+                </div>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <div class="group relative">
+                        <button class="font-medium hover:text-primary transition-colors">Home <i class="fas fa-chevron-down text-xs"></i></button>
+                        <div class="absolute hidden group-hover:block w-48 bg-white dark:bg-zinc-800 shadow-lg rounded-lg py-2 mt-0">
+                            <a href="index.html" class="block px-4 py-2 hover:bg-cream dark:hover:bg-zinc-700">Home 1</a>
+                            <a href="home2.html" class="block px-4 py-2 hover:bg-cream dark:hover:bg-zinc-700">Home 2</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-link font-medium hover:text-primary transition-colors">About</a>
+                    <a href="menu.html" class="nav-link active font-medium text-primary hover:text-primary transition-colors">Bakery Menu</a>
+                    <a href="events.html" class="nav-link font-medium hover:text-primary transition-colors">Orchard Events</a>
+                    <a href="tours.html" class="nav-link font-medium hover:text-primary transition-colors">Farm Tours</a>
+                    <a href="blog.html" class="nav-link font-medium hover:text-primary transition-colors">Blog</a>
+                    <a href="contact.html" class="nav-link font-medium hover:text-primary transition-colors">Contact</a>
+                </div>
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="login.html" class="px-6 py-2 bg-primary text-white rounded-full font-bold hover:bg-soft-brown transition-all shadow-md transform hover:-translate-y-0.5 flex items-center justify-center min-w-[100px]">Login</a>
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-zinc-700 transition-colors">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="rtl-toggle" class="px-6 py-2 border border-charcoal dark:border-zinc-500 rounded-full font-bold hover:bg-charcoal hover:text-white transition-all flex items-center justify-center min-w-[100px]">RTL</button>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-charcoal dark:text-zinc-100 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-zinc-800 shadow-xl absolute w-full transition-all">
+            <div class="px-4 pt-6 pb-6 space-y-2">
+                <div class="flex items-center space-x-3 px-3 mb-6">
+                    <img src="assets/images/logo.svg" alt="Orchard Bakery" class="h-10 w-auto">
+                    <span class="font-serif text-xl font-bold text-primary dark:text-gold">Orchard Bakery</span>
+                </div>
+                <a href="index.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Home 1</a>
+                <a href="home2.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Home 2</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">About</a>
+                <a href="menu.html" class="block px-3 py-2 rounded-md bg-cream dark:bg-zinc-700 font-bold text-primary dark:text-gold">Bakery Menu</a>
+                <a href="events.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Orchard Events</a>
+                <a href="tours.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Farm Tours</a>
+                <a href="blog.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Blog</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Contact</a>
+                <div class="flex flex-col space-y-2 mt-4 pt-4 border-t border-gray-200 dark:border-zinc-700">
+                    <div class="flex items-center justify-between px-3 py-2 mb-2 bg-gray-50 dark:bg-zinc-900/50 rounded-xl">
+                        <span class="text-xs font-bold uppercase tracking-widest opacity-60">Preferences</span>
+                        <div class="flex items-center space-x-2">
+                            <button id="theme-toggle-mobile" class="p-2 w-10 h-10 rounded-full bg-white dark:bg-zinc-800 shadow-sm flex items-center justify-center transition-all">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                            <button id="rtl-toggle-mobile" class="px-3 h-10 text-xs font-bold border border-charcoal dark:border-zinc-500 rounded-full bg-white dark:bg-zinc-800 shadow-sm transition-all">RTL</button>
+                        </div>
+                    </div>
+                    <a href="login.html" class="w-full text-center px-6 py-3 bg-primary text-white rounded-full font-bold shadow-md">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="pt-32 pb-20 px-4 bg-primary text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-30">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=1200" alt="Bakery Hero" class="w-full h-full object-cover">
+        </div>
+        <div class="max-w-7xl mx-auto text-center reveal relative z-10">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 font-serif">The Bakery Menu</h1>
+            <p class="text-xl text-white/80 max-w-2xl mx-auto">Every item is baked fresh daily using heritage recipes and orchard-fresh ingredients.</p>
+        </div>
+    </section>
+
+    <!-- DONUT CATEGORIES -->
+    <section class="py-24 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold font-serif mb-4">Cider Donuts</h2>
+                <p class="text-gray-500">The legend that started it all.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-3xl reveal border border-primary/5 group hover:shadow-2xl transition-all overflow-hidden">
+                    <div class="h-40 overflow-hidden rounded-2xl mb-6">
+                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&q=80&w=600" alt="Classic Donuts" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-3xl">
+                            <i class="fas fa-cookie"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-primary font-serif">$12.00</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Classic Cinnamon Sugar</h3>
+                    <p class="text-gray-500 mb-6">Our signature warm donut tossed in fresh cinnamon and sugar. A dozen of pure joy.</p>
+                    <button class="w-full py-3 bg-primary text-white rounded-xl font-bold hover:bg-soft-brown">Add Dozen</button>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="glass p-8 rounded-3xl reveal border border-primary/5 group hover:shadow-2xl transition-all overflow-hidden" style="transition-delay: 100ms;">
+                    <div class="h-40 overflow-hidden rounded-2xl mb-6">
+                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&q=80&w=600" alt="Maple Donuts" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary text-3xl">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-secondary font-serif">$14.00</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Vermont Maple Glaze</h3>
+                    <p class="text-gray-500 mb-6">Dipped in pure mountain maple syrup and topped with crushed walnuts.</p>
+                    <button class="w-full py-3 bg-secondary text-white rounded-xl font-bold hover:bg-opacity-90">Add Dozen</button>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="glass p-8 rounded-3xl reveal border border-primary/5 group hover:shadow-2xl transition-all overflow-hidden" style="transition-delay: 200ms;">
+                    <div class="h-40 overflow-hidden rounded-2xl mb-6">
+                        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=600" alt="Stuffed Donuts" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-accent text-3xl">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-accent font-serif">$15.00</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Apple Pie Stuffed</h3>
+                    <p class="text-gray-500 mb-6">Filled with orchard apple compote and topped with a light vanilla drizzle.</p>
+                    <button class="w-full py-3 bg-accent text-white rounded-xl font-bold hover:bg-opacity-90">Add Dozen</button>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="glass p-8 rounded-3xl reveal border border-primary/5 group hover:shadow-2xl transition-all overflow-hidden" style="transition-delay: 300ms;">
+                    <div class="h-40 overflow-hidden rounded-2xl mb-6">
+                        <img src="assets/images/pumpkin_spice.png" alt="Pumpkin Spice" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-16 h-16 bg-orange-500/10 rounded-2xl flex items-center justify-center text-orange-500 text-3xl">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-orange-500 font-serif">$14.50</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Pumpkin Spice Glaze</h3>
+                    <p class="text-gray-500 mb-6">Seasonal favorite topped with a pumpkin reduction and autumn spices.</p>
+                    <button class="w-full py-3 bg-orange-500 text-white rounded-xl font-bold hover:bg-opacity-90">Add Dozen</button>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="glass p-8 rounded-3xl reveal border border-primary/5 group hover:shadow-2xl transition-all overflow-hidden" style="transition-delay: 400ms;">
+                    <div class="h-40 overflow-hidden rounded-2xl mb-6">
+                        <img src="assets/images/chocolate_orchard.png" alt="Chocolate Orchard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-16 h-16 bg-brown-600/10 rounded-2xl flex items-center justify-center text-primary text-3xl">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-primary font-serif">$16.00</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Double Chocolate Orchard</h3>
+                    <p class="text-gray-500 mb-6">Dark chocolate ganache with dried apple pieces and a fudge drizzle.</p>
+                    <button class="w-full py-3 bg-primary text-white rounded-xl font-bold hover:bg-opacity-90">Add Dozen</button>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="glass p-8 rounded-3xl reveal border border-primary/5 group hover:shadow-2xl transition-all overflow-hidden" style="transition-delay: 500ms;">
+                    <div class="h-40 overflow-hidden rounded-2xl mb-6">
+                        <img src="assets/images/honeycrisp_caramel.png" alt="Honeycrisp Caramel" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center text-gold text-3xl">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-gold font-serif">$15.50</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Honeycrisp Caramel</h3>
+                    <p class="text-gray-500 mb-6">Drizzled with thick golden caramel and topped with tiny fresh apple cubes.</p>
+                    <button class="w-full py-3 bg-gold text-white rounded-xl font-bold hover:bg-opacity-90">Add Dozen</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FRESH BAKERY SELECTION -->
+    <section class="py-24 px-4 bg-beige dark:bg-zinc-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold font-serif mb-4">Oven Specials</h2>
+                <p class="text-gray-500">Golden, flaky, and made with 100% butter.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Bakery Item -->
+                <div class="flex flex-col sm:flex-row items-center bg-white dark:bg-zinc-900 rounded-[2rem] overflow-hidden shadow-md reveal group">
+                    <div class="w-full sm:w-48 h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&q=80&w=600" alt="Apple Pie" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8 flex-1">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold">Deep Dish Apple Pie</h3>
+                            <span class="font-bold text-primary">$26.00</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">A mountain of apples in our signature flaky lattice crust.</p>
+                        <button class="text-primary font-bold text-sm hover:underline">Add to Order</button>
+                    </div>
+                </div>
+                
+                <!-- Bakery Item -->
+                <div class="flex flex-col sm:flex-row items-center bg-white dark:bg-zinc-900 rounded-[2rem] overflow-hidden shadow-md reveal group" style="transition-delay: 100ms;">
+                    <div class="w-full sm:w-48 h-48 overflow-hidden">
+                        <img src="bakery_muffins_1778596339704.png" alt="Muffins" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8 flex-1">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold">Cider House Muffins</h3>
+                            <span class="font-bold text-primary">$3.50 / ea</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">Giant oatmeal muffins with dried apples and dark chocolate.</p>
+                        <button class="text-primary font-bold text-sm hover:underline">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEVERAGE & CIDER -->
+    <section class="py-24 px-4">
+        <div class="max-w-7xl mx-auto">
+             <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold font-serif mb-4">From the Press</h2>
+                <p class="text-gray-500">Pure, cold-pressed, and seasonal drinks.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="p-6 bg-white dark:bg-zinc-800 rounded-3xl text-center reveal">
+                    <i class="fas fa-mug-hot text-3xl text-secondary mb-4"></i>
+                    <h4 class="font-bold">Hot Mulled Cider</h4>
+                    <p class="text-primary font-bold">$4.50</p>
+                </div>
+                <div class="p-6 bg-white dark:bg-zinc-800 rounded-3xl text-center reveal" style="transition-delay: 100ms;">
+                    <i class="fas fa-ice-cream text-3xl text-primary mb-4"></i>
+                    <h4 class="font-bold">Cider Float</h4>
+                    <p class="text-primary font-bold">$6.50</p>
+                </div>
+                <div class="p-6 bg-white dark:bg-zinc-800 rounded-3xl text-center reveal" style="transition-delay: 200ms;">
+                    <i class="fas fa-bottle-water text-3xl text-accent mb-4"></i>
+                    <h4 class="font-bold">Sparkling Cider</h4>
+                    <p class="text-primary font-bold">$5.00</p>
+                </div>
+                <div class="p-6 bg-white dark:bg-zinc-800 rounded-3xl text-center reveal" style="transition-delay: 300ms;">
+                    <i class="fas fa-coffee text-3xl text-gold mb-4"></i>
+                    <h4 class="font-bold">Orchard Blend Coffee</h4>
+                    <p class="text-primary font-bold">$3.50</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED COMBO OFFERS -->
+    <section class="py-24 px-4 bg-charcoal text-white rounded-[3rem] md:rounded-[4rem] mx-4 mb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div class="lg:w-1/2 reveal order-2 lg:order-1">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 font-serif">Family Feast Packs</h2>
+                <p class="text-gray-400 mb-10 text-lg">Perfect for picnics in the orchard or sharing at home. Our combo packs offer the best value for your visit.</p>
+                
+                <div class="space-y-6">
+                    <div class="p-6 bg-white/5 border border-white/10 rounded-3xl flex justify-between items-center group hover:bg-white/10 transition-all cursor-pointer">
+                        <div>
+                            <h4 class="text-xl font-bold mb-1">The Harvest Box</h4>
+                            <p class="text-sm text-gray-500">1 Dozen Donuts + 1 Gallon Cider + 1 Small Pie</p>
+                        </div>
+                        <div class="text-2xl font-bold text-gold ml-4">$45.00</div>
+                    </div>
+                    <div class="p-6 bg-white/5 border border-white/10 rounded-3xl flex justify-between items-center group hover:bg-white/10 transition-all cursor-pointer">
+                        <div>
+                            <h4 class="text-xl font-bold mb-1">Picnic For Two</h4>
+                            <p class="text-sm text-gray-500">6 Donuts + 2 Hot Ciders + 2 Apple Sandwiches</p>
+                        </div>
+                        <div class="text-2xl font-bold text-gold ml-4">$28.00</div>
+                    </div>
+                </div>
+                
+                <button class="mt-10 px-8 py-4 bg-primary text-white rounded-full font-bold hover:bg-soft-brown transition-all shadow-lg">Order Pack Now</button>
+            </div>
+            <div class="lg:w-1/2 reveal order-1 lg:order-2">
+                <div class="relative p-6">
+                    <img src="https://images.unsplash.com/photo-1510076857177-7470076d4098?auto=format&fit=crop&q=80&w=800" alt="Fresh Orchard Picnic" class="w-full h-auto rounded-[2rem] shadow-2xl rotate-2 group-hover:rotate-0 transition-transform duration-700">
+                    <div class="absolute -bottom-2 -right-2 md:-bottom-6 md:-right-6 w-32 h-32 md:w-44 md:h-44 bg-accent rounded-full flex flex-col items-center justify-center text-center p-4 shadow-2xl -rotate-12 border-4 border-white z-20">
+                        <span class="text-xs md:text-sm font-bold uppercase tracking-widest opacity-80 mb-1">Limited Time</span>
+                        <span class="font-bold leading-tight text-lg md:text-2xl italic">Save 15%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-beige text-charcoal dark:bg-charcoal dark:text-white pt-20 pb-10 px-4 border-t border-primary/10 dark:border-zinc-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="space-y-6">
+                    <a href="index.html" class="flex items-center space-x-3 group">
+                        <img src="assets/images/logo.svg" alt="Orchard Bakery" class="h-10 w-auto group-hover:rotate-12 transition-transform duration-300">
+                        <span class="font-serif text-2xl font-bold text-primary dark:text-gold tracking-tight">Orchard Bakery</span>
+                    </a>
+                    <p class="text-gray-600 dark:text-gray-400">Bringing the harvest to your table since 1952. Handcrafted with love, tradition, and the freshest apples in the valley.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary/10 dark:bg-white/10 text-primary dark:text-white rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-primary/10 dark:bg-white/10 text-primary dark:text-white rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-primary/10 dark:bg-white/10 text-primary dark:text-white rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6 font-serif">Quick Links</h4>
+                    <ul class="space-y-4 text-gray-600 dark:text-gray-400">
+                        <li><a href="about.html" class="hover:text-primary dark:hover:text-gold transition-colors">Our Story</a></li>
+                        <li><a href="menu.html" class="hover:text-primary dark:hover:text-gold transition-colors">Bakery Menu</a></li>
+                        <li><a href="events.html" class="hover:text-primary dark:hover:text-gold transition-colors">Events & Festivals</a></li>
+                        <li><a href="tours.html" class="hover:text-primary dark:hover:text-gold transition-colors">Farm Tours</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6 font-serif">Visit Us</h4>
+                    <ul class="space-y-4 text-gray-600 dark:text-gray-400">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+                            <span>123 Orchard Lane, Apple Valley, NY 10950</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-primary"></i>
+                            <span>(555) 123-4567</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6 font-serif">Stay Updated</h4>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Your Email Address" class="w-full px-4 py-3 bg-white dark:bg-white/10 border border-primary/20 dark:border-white/20 rounded-xl focus:outline-none focus:border-primary transition-all text-charcoal dark:text-white">
+                        <button class="w-full py-3 bg-primary hover:bg-soft-brown text-white font-bold rounded-xl transition-all">Subscribe Now</button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-primary/10 dark:border-zinc-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 Cider Donut & Apple Orchard Bakery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 z-50 bg-primary text-white w-12 h-12 rounded-full shadow-2xl items-center justify-center hidden hover:bg-secondary transition-all transform hover:scale-110">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

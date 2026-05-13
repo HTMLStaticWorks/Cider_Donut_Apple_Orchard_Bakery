@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orchard View | Home 2 | Cider Donut & Apple Orchard Bakery</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#D35400',
+                        accent: '#A52A2A',
+                        cream: '#FDF5E6',
+                        beige: '#F5F5DC',
+                        charcoal: '#333333',
+                        gold: '#D4AF37',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+</head>
+<body class="bg-cream text-charcoal dark:bg-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+
+    <!-- NAVBAR (Same as index.html) -->
+    <nav class="fixed w-full z-50 glass shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3 group">
+                        <img src="assets/images/logo.svg" alt="Orchard Bakery" class="h-12 w-auto group-hover:scale-110 transition-transform duration-300">
+                        <span class="font-serif text-2xl font-bold text-primary dark:text-gold tracking-tight">Orchard Bakery</span>
+                    </a>
+                </div>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <div class="group relative">
+                        <button class="nav-link active font-medium text-primary hover:text-primary transition-colors">Home <i class="fas fa-chevron-down text-xs"></i></button>
+                        <div class="absolute hidden group-hover:block w-48 bg-white dark:bg-zinc-800 shadow-lg rounded-lg py-2 mt-0">
+                            <a href="index.html" class="block px-4 py-2 hover:bg-cream dark:hover:bg-zinc-700">Home 1</a>
+                            <a href="home2.html" class="block px-4 py-2 bg-cream dark:bg-zinc-700 font-bold text-primary dark:text-gold">Home 2</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-link font-medium hover:text-primary transition-colors">About</a>
+                    <a href="menu.html" class="nav-link font-medium hover:text-primary transition-colors">Bakery Menu</a>
+                    <a href="events.html" class="nav-link font-medium hover:text-primary transition-colors">Orchard Events</a>
+                    <a href="tours.html" class="nav-link font-medium hover:text-primary transition-colors">Farm Tours</a>
+                    <a href="blog.html" class="nav-link font-medium hover:text-primary transition-colors">Blog</a>
+                    <a href="contact.html" class="nav-link font-medium hover:text-primary transition-colors">Contact</a>
+                </div>
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="login.html" class="px-6 py-2 bg-primary text-white rounded-full font-bold hover:bg-soft-brown transition-all shadow-md transform hover:-translate-y-0.5 flex items-center justify-center min-w-[100px]">Login</a>
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-zinc-700 transition-colors">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="rtl-toggle" class="px-6 py-2 border border-charcoal dark:border-zinc-500 rounded-full font-bold hover:bg-charcoal hover:text-white transition-all flex items-center justify-center min-w-[100px]">RTL</button>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-charcoal dark:text-zinc-100 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-zinc-800 shadow-xl absolute w-full transition-all">
+            <div class="px-4 pt-6 pb-6 space-y-2">
+                <div class="flex items-center space-x-3 px-3 mb-6">
+                    <img src="assets/images/logo.svg" alt="Orchard Bakery" class="h-10 w-auto">
+                    <span class="font-serif text-xl font-bold text-primary dark:text-gold">Orchard Bakery</span>
+                </div>
+                <a href="index.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Home 1</a>
+                <a href="home2.html" class="block px-3 py-2 rounded-md bg-cream dark:bg-zinc-700 font-bold text-primary dark:text-gold">Home 2</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">About</a>
+                <a href="menu.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Bakery Menu</a>
+                <a href="events.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Orchard Events</a>
+                <a href="tours.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Farm Tours</a>
+                <a href="blog.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Blog</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md hover:bg-cream dark:hover:bg-zinc-700">Contact</a>
+                <div class="flex flex-col space-y-2 mt-4 pt-4 border-t border-gray-200 dark:border-zinc-700">
+                    <div class="flex items-center justify-between px-3 py-2 mb-2 bg-gray-50 dark:bg-zinc-900/50 rounded-xl">
+                        <span class="text-xs font-bold uppercase tracking-widest opacity-60">Preferences</span>
+                        <div class="flex items-center space-x-2">
+                            <button id="theme-toggle-mobile" class="p-2 w-10 h-10 rounded-full bg-white dark:bg-zinc-800 shadow-sm flex items-center justify-center transition-all">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                            <button id="rtl-toggle-mobile" class="px-3 h-10 text-xs font-bold border border-charcoal dark:border-zinc-500 rounded-full bg-white dark:bg-zinc-800 shadow-sm transition-all">RTL</button>
+                        </div>
+                    </div>
+                    <a href="login.html" class="w-full text-center px-6 py-3 bg-primary text-white rounded-full font-bold shadow-md">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-[95vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=1200" alt="Orchard Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-center">
+            <div class="max-w-4xl mx-auto reveal">
+                <span class="text-gold font-bold tracking-widest uppercase text-sm mb-6 block">Welcome to the Valley</span>
+                <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight font-serif italic">
+                    Autumn <br>
+                    <span class="text-gold not-italic">Awakenings</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-12 font-medium max-w-2xl mx-auto leading-relaxed">
+                    Breathe in the crisp mountain air and wander through rows of gold and crimson. Your perfect fall day begins here at Orchard Bakery.
+                </p>
+                <div class="flex flex-wrap gap-6 justify-center">
+                    <a href="tours.html" class="px-10 py-5 bg-white text-charcoal rounded-full font-bold text-lg hover:bg-gold hover:text-white transition-all shadow-2xl transform hover:-translate-y-1">Start Your Tour</a>
+                    <a href="events.html" class="px-10 py-5 border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white hover:text-charcoal transition-all">Seasonal Events</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEASONAL PICKING CALENDAR -->
+    <section class="py-24 px-4 bg-white dark:bg-zinc-950 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <img src="https://images.unsplash.com/photo-1590005354167-6da97870c912?auto=format&fit=crop&q=80&w=1200" alt="Calendar Background" class="w-full h-full object-cover">
+        </div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 font-serif">Harvest Calendar</h2>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto">Track the ripening of your favorite varieties throughout the season.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Month 1 -->
+                <div class="bg-beige dark:bg-zinc-900 p-8 rounded-[2rem] border border-primary/10 reveal">
+                    <div class="text-primary font-bold text-xl mb-4">August</div>
+                    <h3 class="text-2xl font-bold mb-2">Honeycrisp Peak</h3>
+                    <p class="text-gray-500 mb-6 text-sm">Sweet, crunchy, and perfect for snacking. Limited availability.</p>
+                    <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-primary w-[80%]"></div>
+                    </div>
+                    <div class="mt-2 text-xs font-bold opacity-60">80% Ripened</div>
+                </div>
+                <!-- Month 2 -->
+                <div class="bg-beige dark:bg-zinc-900 p-8 rounded-[2rem] border border-primary/10 reveal" style="transition-delay: 100ms;">
+                    <div class="text-secondary font-bold text-xl mb-4">September</div>
+                    <h3 class="text-2xl font-bold mb-2">Gala & Fuji</h3>
+                    <p class="text-gray-500 mb-6 text-sm">The best of the bunch for pies and sauces. Family picking starts.</p>
+                    <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-secondary w-[40%]"></div>
+                    </div>
+                    <div class="mt-2 text-xs font-bold opacity-60">40% Ripened</div>
+                </div>
+                <!-- Month 3 -->
+                <div class="bg-beige dark:bg-zinc-900 p-8 rounded-[2rem] border border-primary/10 reveal" style="transition-delay: 200ms;">
+                    <div class="text-accent font-bold text-xl mb-4">October</div>
+                    <h3 class="text-2xl font-bold mb-2">Granny Smith</h3>
+                    <p class="text-gray-500 mb-6 text-sm">Tart and tangy, perfect for baking. Harvest festival month.</p>
+                    <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-accent w-[10%]"></div>
+                    </div>
+                    <div class="mt-2 text-xs font-bold opacity-60">Early Stage</div>
+                </div>
+                <!-- Month 4 -->
+                <div class="bg-charcoal text-white p-8 rounded-[2rem] flex flex-col justify-center items-center text-center reveal" style="transition-delay: 300ms;">
+                    <i class="fas fa-bell text-4xl text-gold mb-4 animate-swing"></i>
+                    <h3 class="text-2xl font-bold mb-2">Get Notified</h3>
+                    <p class="text-gray-400 mb-6 text-sm">Sign up for ripening alerts directly to your phone.</p>
+                    <button class="bg-gold text-charcoal px-6 py-2 rounded-full font-bold">Alert Me</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FARM MARKET & BAKERY CATALOG -->
+    <section class="py-24 px-4">
+        <div class="max-w-7xl mx-auto">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 lg:gap-24 items-center mb-20">
+            <div class="md:w-2/5 reveal group overflow-hidden rounded-3xl">
+                <img src="bakery_display_1778595177995.png" alt="Market Products" class="w-full h-auto rounded-3xl shadow-2xl group-hover:scale-110 transition-transform duration-700">
+            </div>
+            <div class="md:w-3/5 reveal">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8 font-serif">The Farm Market</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-10">Take a piece of the orchard home with you. Our market is stocked daily with fresh preserves, cider, and artisanal crafts.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center p-6 bg-white dark:bg-zinc-800 rounded-2xl shadow-sm border-l-4 border-primary">
+                            <i class="fas fa-jar text-3xl text-primary mr-6"></i>
+                            <div>
+                                <h4 class="font-bold">Artisanal Jams</h4>
+                                <p class="text-sm opacity-60">Small-batch preserves made with 100% farm fruit.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-6 bg-white dark:bg-zinc-800 rounded-2xl shadow-sm border-l-4 border-secondary">
+                            <i class="fas fa-wine-bottle text-3xl text-secondary mr-6"></i>
+                            <div>
+                                <h4 class="font-bold">Raw Apple Cider</h4>
+                                <p class="text-sm opacity-60">Unfiltered, unpasteurized, pure gold in a bottle.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-6 bg-white dark:bg-zinc-800 rounded-2xl shadow-sm border-l-4 border-gold">
+                            <i class="fas fa-gift text-3xl text-gold mr-6"></i>
+                            <div>
+                                <h4 class="font-bold">Gift Baskets</h4>
+                                <p class="text-sm opacity-60">The perfect curated collection for your loved ones.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENT SPACE RENTAL -->
+    <section class="py-24 px-4 bg-beige dark:bg-zinc-900">
+        <div class="max-w-7xl mx-auto text-center reveal">
+            <h2 class="text-4xl md:text-6xl font-bold mb-12 font-serif">Celebrate in Style</h2>
+            <div class="relative h-[600px] rounded-[3rem] overflow-hidden group">
+                <img src="barn_event_hall_1778595219965.png" alt="Event Barn" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <div class="max-w-2xl px-4">
+                        <h3 class="text-4xl md:text-5xl text-white font-bold mb-6">Rustic Weddings & Events</h3>
+                        <p class="text-xl text-white/90 mb-10">Our historic barn provides the perfect backdrop for your most cherished moments.</p>
+                        <div class="flex justify-center gap-6">
+                            <a href="events.html" class="px-8 py-4 bg-white text-charcoal rounded-full font-bold hover:bg-primary hover:text-white transition-all">View Packages</a>
+                            <a href="contact.html" class="px-8 py-4 border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-charcoal transition-all">Inquire Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FARM TO TABLE STORY -->
+    <section class="py-24 px-4">
+        <div class="max-w-7xl mx-auto">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+            <div class="lg:w-3/5 reveal order-2 lg:order-1">
+                <span class="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">Our Heritage</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 font-serif leading-tight">Four Generations of Farming</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed max-w-2xl">It started with a single apple tree and a simple dream in 1952. Today, the Miller family continues the legacy of sustainable farming, preserving the land and the traditions that make our cider donuts legendary.</p>
+                    
+                    <div class="grid grid-cols-2 gap-8 mb-10">
+                        <div>
+                            <div class="text-4xl font-bold text-primary mb-2">200+</div>
+                            <p class="text-sm opacity-60">Acres of Orchard</p>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold text-primary mb-2">50k</div>
+                            <p class="text-sm opacity-60">Donuts Baked Weekly</p>
+                        </div>
+                    </div>
+                    
+            </div>
+            <div class="lg:w-2/5 reveal order-1 lg:order-2">
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1590682680695-43b964a3ae17?auto=format&fit=crop&q=80&w=600" alt="Farm Story 1" class="rounded-2xl shadow-lg mt-12 hover:scale-105 transition-transform w-full h-auto">
+                    <img src="https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?auto=format&fit=crop&q=80&w=600" alt="Farm Story 2" class="rounded-2xl shadow-lg hover:scale-105 transition-transform w-full h-auto">
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE ARTISAN COLLECTION -->
+    <section class="py-24 px-4 bg-white dark:bg-zinc-950">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-16 items-center mb-20">
+                <div class="lg:w-1/2 reveal">
+                    <span class="text-gold font-bold tracking-widest uppercase text-sm mb-4 block">Seasonal Flavors</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8 font-serif leading-tight">The Artisan <br>Collection</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed">Our secret recipe hasn't changed since 1952. Each donut is a labor of love, made with heritage flour and the finest local spices.</p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-center space-x-6 group">
+                            <div class="w-20 h-20 bg-beige dark:bg-zinc-900 rounded-2xl flex items-center justify-center text-primary text-3xl group-hover:scale-110 transition-transform">
+                                <i class="fas fa-cookie"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold font-serif">Signature Cinnamon</h4>
+                                <p class="text-sm opacity-60">Classic, warm, and tossed in our proprietary spice blend.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-6 group">
+                            <div class="w-20 h-20 bg-beige dark:bg-zinc-900 rounded-2xl flex items-center justify-center text-secondary text-3xl group-hover:scale-110 transition-transform">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold font-serif">Maple Pecan Glaze</h4>
+                                <p class="text-sm opacity-60">Pure maple syrup from the valley, topped with roasted pecans.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 reveal relative">
+                    <div class="relative rounded-[3rem] overflow-hidden shadow-2xl">
+                        <img src="assets/images/donut_collection.png" alt="Donut Collection" class="w-full h-auto hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-gold/10 rounded-full blur-3xl z-0"></div>
+                    <div class="absolute -top-10 -left-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl z-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISITOR MEMORIES -->
+    <section class="py-24 px-4 bg-beige dark:bg-zinc-900 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 font-serif">Visitor Memories</h2>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto">See why families have made Orchard Bakery their autumn tradition for generations.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal order-2 lg:order-1">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="glass p-8 rounded-3xl shadow-lg">
+                            <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="italic text-gray-700 dark:text-gray-300 mb-6 text-sm">"The best cider donuts we've ever had! The farm tours were so educational for the kids."</p>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-primary rounded-full"></div>
+                                <div>
+                                    <h5 class="font-bold text-xs uppercase">The Miller Family</h5>
+                                    <p class="text-[10px] opacity-60">Annual Visitors</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass p-8 rounded-3xl shadow-lg mt-8 md:mt-0">
+                            <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="italic text-gray-700 dark:text-gray-300 mb-6 text-sm">"Pure magic. The golden hour in the orchard is something everyone should experience once."</p>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-secondary rounded-full"></div>
+                                <div>
+                                    <h5 class="font-bold text-xs uppercase">James & Sarah</h5>
+                                    <p class="text-[10px] opacity-60">Local Neighbors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12 text-center lg:text-left">
+                        <a href="tours.html" class="inline-flex items-center px-10 py-5 bg-charcoal text-white rounded-full font-bold hover:bg-primary transition-all group">
+                            Book Your Experience
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="reveal order-1 lg:order-2 group">
+                    <div class="relative rounded-[4rem] overflow-hidden shadow-2xl">
+                        <img src="assets/images/farm_experience.png" alt="Visitor Experience" class="w-full h-auto group-hover:scale-110 transition-transform duration-1000">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Same as index.html) -->
+    <footer class="bg-beige text-charcoal dark:bg-charcoal dark:text-white pt-20 pb-10 px-4 border-t border-primary/10 dark:border-zinc-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="space-y-6">
+                    <a href="index.html" class="flex items-center space-x-3 group">
+                        <img src="assets/images/logo.svg" alt="Orchard Bakery" class="h-10 w-auto group-hover:rotate-12 transition-transform duration-300">
+                        <span class="font-serif text-2xl font-bold text-primary dark:text-gold tracking-tight">Orchard Bakery</span>
+                    </a>
+                    <p class="text-gray-600 dark:text-gray-400">Bringing the harvest to your table since 1952. Handcrafted with love, tradition, and the freshest apples in the valley.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary/10 dark:bg-white/10 text-primary dark:text-white rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-primary/10 dark:bg-white/10 text-primary dark:text-white rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-primary/10 dark:bg-white/10 text-primary dark:text-white rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6 font-serif">Quick Links</h4>
+                    <ul class="space-y-4 text-gray-600 dark:text-gray-400">
+                        <li><a href="about.html" class="hover:text-primary dark:hover:text-gold transition-colors">Our Story</a></li>
+                        <li><a href="menu.html" class="hover:text-primary dark:hover:text-gold transition-colors">Bakery Menu</a></li>
+                        <li><a href="events.html" class="hover:text-primary dark:hover:text-gold transition-colors">Events & Festivals</a></li>
+                        <li><a href="tours.html" class="hover:text-primary dark:hover:text-gold transition-colors">Farm Tours</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6 font-serif">Visit Us</h4>
+                    <ul class="space-y-4 text-gray-600 dark:text-gray-400">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+                            <span>123 Orchard Lane, Apple Valley, NY 10950</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-primary"></i>
+                            <span>(555) 123-4567</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6 font-serif">Stay Updated</h4>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Your Email Address" class="w-full px-4 py-3 bg-white dark:bg-white/10 border border-primary/20 dark:border-white/20 rounded-xl focus:outline-none focus:border-primary transition-all text-charcoal dark:text-white">
+                        <button class="w-full py-3 bg-primary hover:bg-soft-brown text-white font-bold rounded-xl transition-all">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-primary/10 dark:border-zinc-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 Cider Donut & Apple Orchard Bakery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 z-50 bg-primary text-white w-12 h-12 rounded-full shadow-2xl items-center justify-center hidden hover:bg-secondary transition-all transform hover:scale-110">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
