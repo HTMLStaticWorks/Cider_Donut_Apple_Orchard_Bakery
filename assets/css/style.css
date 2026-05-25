@@ -284,14 +284,14 @@ nav.glass:hover {
 
 /* White Solid Buttons on dark overlays (e.g. hero, event banner) */
 .btn-white-solid {
-    background-color: #ffffff !important;
-    color: var(--charcoal) !important;
+    background-color: #ffffff;
+    color: var(--charcoal);
     transition: all 0.3s ease !important;
 }
 
 .dark .btn-white-solid {
-    background-color: #ffffff !important;
-    color: var(--charcoal) !important;
+    background-color: #ffffff;
+    color: var(--charcoal);
 }
 
 /* Check Availability button — gold hover in all modes */
