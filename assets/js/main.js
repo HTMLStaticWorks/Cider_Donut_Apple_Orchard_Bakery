@@ -52,14 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    }
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('#mobile-menu-btn');
+        if (btn) {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+    });
 
     // Smooth Scroll Reveal
     const revealElements = document.querySelectorAll('.reveal');
