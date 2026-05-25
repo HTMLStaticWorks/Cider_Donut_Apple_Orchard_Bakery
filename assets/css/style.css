@@ -258,6 +258,59 @@ nav.glass:hover {
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
 }
 
+/* Quick View Button — Fresh from the Hearth Section */
+.quick-view-btn {
+    background-color: #ffffff !important;
+    color: var(--charcoal) !important;
+    transition: all 0.3s ease !important;
+}
+
+.quick-view-btn:hover {
+    background-color: var(--primary) !important;
+    color: #ffffff !important;
+    transform: scale(1.05) !important;
+}
+
+.dark .quick-view-btn {
+    background-color: var(--gold) !important;
+    color: var(--charcoal) !important;
+}
+
+.dark .quick-view-btn:hover {
+    background-color: #ffffff !important;
+    color: var(--charcoal) !important;
+    transform: scale(1.05) !important;
+}
+
+/* White Solid Buttons on dark overlays (e.g. hero, event banner) */
+.btn-white-solid {
+    background-color: #ffffff !important;
+    color: var(--charcoal) !important;
+    transition: all 0.3s ease !important;
+}
+
+.dark .btn-white-solid {
+    background-color: #ffffff !important;
+    color: var(--charcoal) !important;
+}
+
+/* Check Availability button — gold hover in all modes */
+.check-availability-btn {
+    transition: all 0.3s ease !important;
+}
+
+.check-availability-btn:hover {
+    background-color: var(--gold) !important;
+    color: var(--charcoal) !important;
+    transform: translateY(-3px) scale(1.03) !important;
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.35) !important;
+}
+
+.dark .check-availability-btn:hover {
+    background-color: var(--gold) !important;
+    color: var(--charcoal) !important;
+}
+
 /* Perfect Circle Toggles for Header */
 #theme-toggle, #theme-toggle-mobile,
 #rtl-toggle, #rtl-toggle-mobile {
@@ -325,6 +378,117 @@ nav.glass:hover {
 .dark #theme-toggle:hover i, .dark #theme-toggle-mobile:hover i {
     color: var(--charcoal) !important;
     transform: scale(1.2) rotate(15deg) !important;
+}
+
+/* ───────────────────────────────────────────────
+   LOGIN PAGE — override global toggle circle sizing
+   ─────────────────────────────────────────────── */
+.login-util-btn#theme-toggle,
+.login-util-btn#rtl-toggle {
+    width: 5.5rem !important;
+    height: 3rem !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    border-radius: 1rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    color: var(--charcoal) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+}
+
+.dark .login-util-btn#theme-toggle,
+.dark .login-util-btn#rtl-toggle {
+    background-color: rgba(39, 39, 42, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    color: var(--gold) !important;
+}
+
+.login-rtl-btn#rtl-toggle {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.1em !important;
+    font-weight: bold !important;
+}
+
+.login-util-btn:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    color: var(--charcoal) !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.dark .login-util-btn:hover {
+    background-color: rgba(39, 39, 42, 0.8) !important;
+    color: var(--gold) !important;
+}
+
+/* Social Login Buttons — safe bg in dark mode */
+.social-login-btn {
+    background-color: #ffffff !important;
+    transition: background-color 0.2s ease, transform 0.2s ease !important;
+}
+
+.dark .social-login-btn {
+    background-color: #27272a !important;
+}
+
+.social-login-btn:hover {
+    background-color: #f9fafb !important;
+    transform: translateY(-2px) !important;
+}
+
+.dark .social-login-btn:hover {
+    background-color: #3f3f46 !important;
+}
+
+/* RTL Mode Support for Login & Signup Toggles Container */
+html[dir="rtl"] .login-util-container {
+    right: auto !important;
+    left: 2rem !important;
+    justify-content: flex-start !important;
+}
+
+html[dir="rtl"] .login-util-container > * + * {
+    margin-left: 0 !important;
+    margin-right: 0.75rem !important;
+}
+
+@media (min-width: 1024px) {
+    html[dir="rtl"] .login-util-container {
+        left: 2.5rem !important;
+    }
+}
+
+/* RTL Input Icon & Padding Alignments */
+html[dir="rtl"] .relative > i.fa-envelope,
+html[dir="rtl"] .relative > i.fa-lock {
+    left: auto !important;
+    right: 1.25rem !important;
+}
+
+html[dir="rtl"] .relative > .password-toggle {
+    right: auto !important;
+    left: 1.25rem !important;
+}
+
+/* Login inputs (contain envelope/lock icons on right side in RTL) */
+html[dir="rtl"] form.space-y-6 input[type="email"] {
+    padding-left: 1.5rem !important;
+    padding-right: 3.25rem !important;
+}
+
+html[dir="rtl"] form.space-y-6 input[type="password"] {
+    padding-left: 3.25rem !important;
+    padding-right: 3.25rem !important;
+}
+
+/* Signup inputs (no left-hand icons, only right-hand toggles in LTR, swaps to left in RTL) */
+html[dir="rtl"] form.space-y-4 .password-input {
+    padding-left: 3.25rem !important;
+    padding-right: 1rem !important;
 }
 
 /* Dark Mode Enhancements: Pure Black Background & Dark Grey Alternate Sections */
